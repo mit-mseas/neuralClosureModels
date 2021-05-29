@@ -11,15 +11,19 @@
 - `examples/`: Contains some examples demonstrating how to use the DDE solver and the neural-DDE implementations
 - Experiments - 1 
 	- `testcases/AD_Eqn_ROM/`: Contains the scripts corresponding to the different neural closure models
-	- `src/advec_diff_case/rom_advec_diff.py`: Script containing the RHS of the POD-GP ROM for the Burger's equations
+	- `src/advec_diff_case/rom_advec_diff_modcall.py`: Script containing the RHS of the POD-GP ROM for the Burger's equations
 - Experiments - 2
 	- `testcases/AD_Eqn_Res/`: Contains the scripts corresponding to the different neural closure models 
-	- `src/advec_diff_case/advec_advec_diff.py`: Script containing the RHS of the FOM for the Burger's equations
-- Experiments - 3 
+	- `src/advec_diff_case/advec_advec_diff_modcall.py`: Script containing the RHS of the FOM for the Burger's equations
+- Experiments - 3a 
 	- `testcases/Bio_Eqn/`: Contains the scripts corresponding to the different neural closure models
-	- `src/bio_eqn_case/bio_eqn.py`: Script containing the RHS of the NPZ and NNPZD models
+	- `src/bio_eqn_case/bio_eqn_modcall.py`: Script containing the RHS of the NPZ and NNPZD models
+- Experiments - 3b 
+	- `testcases/Bio_Eqn_1D/`: Contains the scripts corresponding to the different neural closure models
+	- `src/bio_eqn_case/bio_eqn_1D_modcall.py`: Script containing the RHS of diffusion-reaction equation
 
 ### Abstract
-Complex dynamical systems are used for predictions in many applications. Because of computational costs, models are however often truncated, coarsened, or aggregated. As the neglected and unresolved terms along with their interactions with the resolved ones become important, the usefulness of model predictions diminishes. We develop a novel, versatile, and rigorous methodology to learn non-Markovian closure parameterizations for low-fidelity models using data from high-fidelity simulations. The new *neural closure models* augment low-fidelity models with neural delay differential equations (nDDEs), motivated by the Mori-Zwanzig formulation and the inherent delays in natural dynamical systems. We demonstrate that neural closures efficiently account for truncated modes in reduced-order-models, capture the effects of subgrid-scale processes in coarse models, and augment the simplification of complex biochemical models. We show that using non-Markovian over Markovian closures improves long-term accuracy and requires smaller networks. We provide adjoint equation derivations and network architectures needed to efficiently implement the new discrete and distributed nDDEs. The performance of discrete over distributed delays in closure models is explained using information theory, and we observe an optimal amount of past information for a specified architecture. Finally, we analyze computational complexity and explain the limited additional cost due to neural closure models.
+
+Complex dynamical systems are used for predictions in many domains. Because of computational costs, models are however often truncated, coarsened, or aggregated. As the neglected and unresolved terms along with their interactions with the resolved ones become important, the usefulness of model predictions diminishes. We develop a novel, versatile, and rigorous methodology to learn non-Markovian closure parameterizations for low-fidelity models using data from high-fidelity simulations. The new *neural closure models* augment low-fidelity models with neural delay differential equations (nDDEs), motivated by the Mori-Zwanzig formulation and the inherent delays in complex dynamical systems. We demonstrate that neural closures efficiently account for truncated modes in reduced-order-models, capture the effects of subgrid-scale processes in coarse models, and augment the simplification of complex biological and physical-biogeochemical models. We find that using non-Markovian over Markovian closures improves long-term prediction accuracy and requires smaller networks. We derive adjoint equations and network architectures needed to efficiently implement the new discrete and distributed nDDEs. The performance of discrete over distributed delays in closure models is explained using information theory, and we find an optimal amount of past information for a specified architecture. Finally, we analyze computational complexity and explain the limited additional cost due to neural closure models.
 
 
